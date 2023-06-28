@@ -13,6 +13,9 @@ document.querySelector('#favcolor').addEventListener('input', function(){
     colorPicker = this.value;
 });
 
+document.querySelector('#clear').addEventListener('click', function(){
+    container.innerHTML = '';
+})
 /*
 // random color generator 
 function random(min, max) {
@@ -43,19 +46,19 @@ function createSquare(size){
     for (let i = 0; i < size*size; i++) {
         const content = document.createElement('div');
         content.classList.add('content');
-        content.addEventListener('mouseover', changeColor);
+        content.addEventListener('mouseover', changeColor); 
         container.appendChild(content);
       }
   
       const flexBasis = `${100 / size}%`;
       const contentElements = document.querySelectorAll('.content');
       contentElements.forEach(element => {
-        element.style.flexBasis = flexBasis;
+        //element.style.flexBasis = flexBasis;
         element.style.width = flexBasis; 
         element.style.height = flexBasis;
 
        }); 
-      
+
 };
 
 function changeColor(event) {
